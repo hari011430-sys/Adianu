@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Happy Birthday Palak</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    background:
+        radial-gradient(circle at 50% 15%,#ff267844,transparent 28%),
+        radial-gradient(circle at 15% 80%,#ff006633,transparent 35%),
+        radial-gradient(circle at 90% 70%,#c0006533,transparent 35%),
+        linear-gradient(145deg,#070006,#25000f,#4b001f,#090006);
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-glow{
+    position:fixed;
+    inset:-20%;
+    background:radial-gradient(circle,rgba(255,0,110,.13),transparent 55%);
+    animation:bgGlow 5s ease-in-out infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes bgGlow{
+    from{transform:scale(.9);opacity:.5}
+    to{transform:scale(1.1);opacity:1}
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 8px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.15;transform:scale(.5)}
+    to{opacity:1;transform:scale(1.5)}
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:5;
+}
+
+/* ================= BOW ================= */
+
+.bow-area{
+    position:relative;
+    width:270px;
+    height:215px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:-2px;
+}
+
+.bow{
+    position:absolute;
+
+    width:145px;
+    height:185px;
+
+    border:9px solid transparent;
+    border-right-color:#f4b52e;
+    border-top-color:#ffd45d;
+    border-bottom-color:#a96008;
+
+    border-radius:50%;
+
+    transform:rotate(-2deg);
+
+    filter:
+        drop-shadow(0 0 5px #ffe9a5)
+        drop-shadow(0 0 14px #ff9d00);
+
+    z-index:5;
+}
+
+.bow::before{
+    content:"";
+
+    position:absolute;
+    inset:8px;
+
+    border:3px solid transparent;
+    border-right-color:#fff0a0;
+    border-top-color:#d98916;
+    border-bottom-color:#f6c84d;
+
+    border-radius:50%;
+}
+
+/* ================= STRING ================= */
+
+.string{
+    position:absolute;
+
+    width:2px;
+    height:184px;
+
+    background:linear-gradient(
+        to bottom,
+        #fff8d8,
+        #cdbb82,
+        #fff8d8
+    );
+
+    box-shadow:0 0 5px white;
+
+    transform:rotate(-2deg);
+
+    z-index:8;
+}
+
+/* ================= GRIP ================= */
+
+.grip{
+    position:absolute;
+
+    width:27px;
+    height:68px;
+
+    border-radius:8px;
+
+    background:linear-gradient(
+        90deg,
+        #5b2c00,
+        #e9a426,
+        #fff0a0,
+        #b96c0b,
+        #542700
+    );
+
+    border:2px solid #ffd866;
+
+    box-shadow:0 0 12px #ffad00;
+
+    z-index:10;
+}
+
+/* ================= PALAK ================= */
+
+.palak{
+    position:absolute;
+
+    width:54px;
+    height:54px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:radial-gradient(
+        circle at 35% 25%,
+        #ff6684,
+        #d00049 60%,
+        #760027
+    );
+
+    border:3px solid #ffd76b;
+
+    box-shadow:
+        0 0 8px #ffe18a,
+        0 0 22px #ff9800,
+        inset 0 0 12px rgba(255,255,255,.2);
+
+    z-index:15;
+}
+
+.palak span{
+    color:white;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.7px;
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #ffb000;
+}
+
+/* ================= ARROW ================= */
+
+.arrow{
+    position:absolute;
+
+    width:6px;
+    height:108px;
+
+    left:50%;
+    top:54px;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+        to bottom,
+        #fff,
+        #ffd342,
+        #fff0a0
+    );
+
+    border-radius:10px;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 15px #ffad00;
+
+    z-index:25;
+}
+
+.arrow::before{
+    content:"";
+
+    position:absolute;
+
+    top:-16px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom:20px solid #ffd34d;
+
+    filter:drop-shadow(0 0 5px #ffad00);
+}
+
+.arrow::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:3px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:24px;
+    height:18px;
+
+    border-left:2px solid white;
+    border-right:2px solid white;
+}
+
+/* ================= ARROW FLIGHT ================= */
+
+.arrow.shoot{
+    animation:arrowShoot 1.4s cubic-bezier(.12,.82,.12,1) forwards;
+}
+
+@keyframes arrowShoot{
+    0%{
+        top:54px;
+        opacity:1;
+        transform:translateX(-50%) scale(1);
+    }
+
+    70%{
+        opacity:1;
+    }
+
+    100%{
+        top:-165px;
+        opacity:0;
+        transform:translateX(-50%) scale(.65);
+    }
+}
+
+/* ================= BUTTON ================= */
+
+#birthdayBtn{
+    position:relative;
+    z-index:30;
+
+    padding:16px 29px;
+
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:60px;
+
+    color:white;
+
+    font-size:17px;
+    font-weight:800;
+
+    background:linear-gradient(
+        135deg,
+        #ff1d75,
+        #d00055,
+        #80002f
+    );
+
+    box-shadow:
+        0 10px 30px rgba(255,0,100,.5),
+        0 0 35px rgba(255,20,120,.3);
+
+    cursor:pointer;
+
+    animation:buttonPulse 2s infinite;
+}
+
+#birthdayBtn:active{
+    transform:scale(.93);
+}
+
+@keyframes buttonPulse{
+    0%,100%{
+        box-shadow:
+            0 10px 30px rgba(255,0,100,.4),
+            0 0 25px rgba(255,20,120,.2);
+    }
+
+    50%{
+        box-shadow:
+            0 10px 45px rgba(255,0,100,.7),
+            0 0 55px rgba(255,20,120,.5);
+    }
+}
+
+/* ==================================================
+   IMPACT POINT
+   YAHI SE HEARTS NIKLENGE
+================================================== */
+
+.impact{
+    position:fixed;
+
+    left:50%;
+    top:10%;
+
+    width:20px;
+    height:20px;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+    z-index:100;
+}
+
+/* ================= BIG BLAST ================= */
+
+.blast{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%) scale(.1);
+
+    font-size:55px;
+
+    animation:blast 900ms ease-out forwards;
+}
+
+@keyframes blast{
+    0%{
+        transform:translate(-50%,-50%) scale(.1);
+        opacity:1;
+    }
+
+    35%{
+        transform:translate(-50%,-50%) scale(1.5);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(3.8);
+        opacity:0;
+    }
+}
+
+/* ================= IMPACT RING ================= */
+
+.impact-ring{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:10px;
+    height:10px;
+
+    border:3px solid #ff76ae;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation:ring 1s ease-out forwards;
+}
+
+@keyframes ring{
+    0%{
+        width:10px;
+        height:10px;
+        opacity:1;
+    }
+
+    100%{
+        width:270px;
+        height:270px;
+        opacity:0;
+    }
+}
+
+/* ==================================================
+   HEART BURST
+================================================== */
+
+.burst-heart{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.3);
+
+    font-size:26px;
+
+    pointer-events:none;
+
+    animation:
+        heartBurst
+        1.8s
+        cubic-bezier(.1,.7,.2,1)
+        forwards;
+
+    filter:
+        drop-shadow(0 0 7px #ff4d91);
+}
+
+@keyframes heartBurst{
+
+    0%{
+        transform:
+            translate(-50%,-50%)
+            translate(0,0)
+            scale(.2)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1.25)
+            rotate(var(--rotate));
+
+        opacity:0;
+    }
+}
+
+/* ================= HEART TRAIL ================= */
+
+.floating-heart{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:75;
+
+    font-size:24px;
+
+    animation:heartFloat 5s linear forwards;
+
+    filter:drop-shadow(0 0 8px #ff4d91);
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(0) scale(.4);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-105vh)
+            translateX(var(--move))
+            scale(1.4);
+
+        opacity:0;
+    }
+}
+
+/* ================= BALLOONS ================= */
+
+.balloon{
+    position:fixed;
+
+    bottom:-100px;
+
+    pointer-events:none;
+
+    z-index:65;
+
+    animation:balloonUp linear forwards;
+
+    filter:drop-shadow(0 0 12px #ff5ca8);
+}
+
+@keyframes balloonUp{
+
+    0%{
+        transform:translateY(0) rotate(-8deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:translateY(-55vh) rotate(8deg);
+    }
+
+    100%{
+        transform:translateY(-115vh) rotate(-8deg);
+        opacity:0;
+    }
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+    position:fixed;
+
+    top:-20px;
+
+    width:8px;
+    height:12px;
+
+    z-index:80;
+
+    animation:confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    position:absolute;
+
+    bottom:6%;
+
+    width:90%;
+    max-width:500px;
+
+    padding:20px 15px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:
+        0 15px 60px rgba(0,0,0,.45),
+        0 0 50px rgba(255,0,120,.25);
+
+    opacity:0;
+
+    transform:
+        translateY(35px)
+        scale(.75);
+
+    transition:
+        1s cubic-bezier(.2,.9,.2,1);
+
+    z-index:40;
+}
+
+.message.show{
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.title{
+    font-size:24px;
+    font-weight:900;
+
+    text-shadow:
+        0 0 8px white,
+        0 0 20px #ff2d83,
+        0 0 40px #ff006a;
+}
+
+.sub{
+    margin-top:8px;
+    color:#ffd8e8;
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .bow-area{
+        width:250px;
+        height:205px;
+    }
+
+    .bow{
+        width:140px;
+        height:178px;
+    }
+
+    .string{
+        height:177px;
+    }
+
+    .arrow{
+        height:103px;
+        top:52px;
+    }
+
+    .palak{
+        width:51px;
+        height:51px;
+    }
+
+    #birthdayBtn{
+        font-size:16px;
+        padding:15px 23px;
+    }
+
+    .title{
+        font-size:21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+
+<div id="stars"></div>
+
+<div class="main">
+
+    <div class="bow-area">
+
+        <div class="bow"></div>
+
+        <div class="string"></div>
+
+        <div class="grip"></div>
+
+        <div class="palak">
+            <span>PALAK</span>
+        </div>
+
+        <div class="arrow" id="arrow"></div>
+
+    </div>
+
+    <button id="birthdayBtn">
+        🎂 Happy Birthday Palak ❤️
+    </button>
+
+    <div class="message" id="message">
+
+        <div class="title">
+            Happy Birthday Palak Madam Jiiiii ❤️
+        </div>
+
+        <div class="sub">
+            ✨ Tumhari smile hamesha aisi hi beautiful rahe ✨
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= STARS ================= */
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<90;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=
+        Math.random()*3+"s";
+
+    stars.appendChild(star);
+}
+
+
+/* ================= ELEMENTS ================= */
+
+const button=
+    document.getElementById("birthdayBtn");
+
+const arrow=
+    document.getElementById("arrow");
+
+const message=
+    document.getElementById("message");
+
+let clicked=false;
+
+
+/* ================= BUTTON ================= */
+
+button.addEventListener("click",()=>{
+
+    if(clicked)return;
+
+    clicked=true;
+
+    /* ARROW SHOOT */
+
+    arrow.classList.add("shoot");
+
+    button.innerHTML=
+        "✨ Palak Jii ❤️ ✨";
+
+
+    /* WAIT FOR IMPACT */
+
+    setTimeout(()=>{
+
+        createImpact();
+
+        createHeartBurst();
+
+        createFloatingHearts();
+
+        createBalloons();
+
+        createConfetti();
+
+
+        setTimeout(()=>{
+
+            message.classList.add("show");
+
+        },700);
+
+    },1400);
+
+});
+
+
+/* ==================================================
+   IMPACT
+================================================== */
+
+function createImpact(){
+
+    const impact=
+        document.createElement("div");
+
+    impact.className="impact";
+
+    impact.innerHTML=`
+
+        <div class="blast">
+            💥✨
+        </div>
+
+        <div class="impact-ring"></div>
+
+    `;
+
+    document.body.appendChild(impact);
+
+    setTimeout(()=>{
+        impact.remove();
+    },1300);
+}
+
+
+/* ==================================================
+   HEART BURST
+   DIRECTLY IMPACT POINT SE
+================================================== */
+
+function createHeartBurst(){
+
+    const impact=
+        document.createElement("div");
+
+    impact.className="impact";
+
+    document.body.appendChild(impact);
+
+
+    const hearts=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💝",
+        "💓",
+        "💞",
+        "✨"
+    ];
+
+
+    for(let i=0;i<40;i++){
+
+        const heart=
+            document.createElement("div");
+
+        heart.className="burst-heart";
+
+        heart.innerHTML=
+            hearts[
+                Math.floor(
+                    Math.random()*hearts.length
+                )
+            ];
+
+
+        /* RANDOM DIRECTION */
+
+        const angle=
+            Math.random()*Math.PI*2;
+
+        const distance=
+            80+Math.random()*180;
+
+
+        const x=
+            Math.cos(angle)*distance;
+
+        const y=
+            Math.sin(angle)*distance;
+
+
+        heart.style.setProperty(
+            "--x",
+            x+"px"
+        );
+
+        heart.style.setProperty(
+            "--y",
+            y+"px"
+        );
+
+        heart.style.setProperty(
+            "--rotate",
+            (Math.random()*360-180)+"deg"
+        );
+
+
+        heart.style.animationDelay=
+            Math.random()*.25+"s";
+
+
+        impact.appendChild(heart);
+    }
+
+
+    setTimeout(()=>{
+
+        impact.remove();
+
+    },2300);
+}
+
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
+
+function createFloatingHearts(){
+
+    const types=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💝"
+    ];
+
+    for(let i=0;i<30;i++){
+
+        setTimeout(()=>{
+
+            const heart=
+                document.createElement("div");
+
+            heart.className="floating-heart";
+
+            heart.innerHTML=
+                types[
+                    Math.floor(
+                        Math.random()*types.length
+                    )
+                ];
+
+            heart.style.left=
+                Math.random()*100+"%";
+
+            heart.style.bottom=
+                (Math.random()*25-5)+"%";
+
+            heart.style.setProperty(
+                "--move",
+                (Math.random()*160-80)+"px"
+            );
+
+            heart.style.animationDuration=
+                (4+Math.random()*4)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(()=>{
+                heart.remove();
+            },8500);
+
+        },i*100);
+    }
+}
+
+
+/* ==================================================
+   BALLOONS
+================================================== */
+
+function createBalloons(){
+
+    for(let i=0;i<25;i++){
+
+        setTimeout(()=>{
+
+            const balloon=
+                document.createElement("div");
+
+            balloon.className="balloon";
+
+            balloon.innerHTML="🎈";
+
+            balloon.style.left=
+                Math.random()*100+"%";
+
+            balloon.style.fontSize=
+                (38+Math.random()*32)+"px";
+
+            balloon.style.animationDuration=
+                (5+Math.random()*4)+"s";
+
+            document.body.appendChild(balloon);
+
+            setTimeout(()=>{
+                balloon.remove();
+            },10000);
+
+        },i*140);
+    }
+}
+
+
+/* ==================================================
+   CONFETTI
+================================================== */
+
+function createConfetti(){
+
+    const colors=[
+        "#ff4d6d",
+        "#ff85a1",
+        "#ffd93d",
+        "#ffffff",
+        "#ff69b4",
+        "#c77dff"
+    ];
+
+    for(let i=0;i<80;i++){
+
+        setTimeout(()=>{
+
+            const piece=
+                document.createElement("div");
+
+            piece.className="confetti";
+
+            piece.style.background=
+                colors[
+                    Math.floor(
+                        Math.random()*colors.length
+                    )
+                ];
+
+            piece.style.left=
+                Math.random()*100+"%";
+
+            piece.style.width=
+                (5+Math.random()*7)+"px";
+
+            piece.style.height=
+                (7+Math.random()*10)+"px";
+
+            piece.style.animationDuration=
+                (2.5+Math.random()*3)+"s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(()=>{
+                piece.remove();
+            },6000);
+
+        },i*25);
+    }
+}
+
+</script>
+
+</body>
+</html>
